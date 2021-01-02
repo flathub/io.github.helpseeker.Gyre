@@ -22,28 +22,32 @@
         "*.a"
     ],
     "modules" : [
-    	"python3-aiohttp.json",
-    	{
-    	    "name" : "ffmpeg",
-    	    "config-opts" : [
+        "python3-aiohttp.json",
+        {
+            "name" : "ffmpeg",
+            "config-opts" : [
                 "--disable-all",
                 "--enable-avcodec",
                 "--enable-avformat",
                 "--enable-avfilter",
+                "--enable-swresample",
                 "--enable-ffmpeg",
                 "--enable-protocol=file",
+                "--enable-decoder=h264,mp3",
+                "--enable-encoder=wrapped_avframe,pcm_s16le",
                 "--enable-demuxer=concat,mov,mp3",
-                "--enable-muxer=matroska,mp4,asf,avi,flv,f4v,mov",
-                "--enable-bsf=h264_mp4toannexb"
-    	    ],
-    	    "sources" : [
-    	        {
-    	            "type" : "git",
-    	            "url" : "https://git.ffmpeg.org/ffmpeg.git",
-    	            "tag" : "n4.3.1"
-    	        }
-    	    ]
-    	},
+                "--enable-muxer=matroska,mp4,asf,avi,flv,f4v,mov,null",
+                "--enable-bsf=h264_mp4toannexb",
+                "--enable-filter=aresample"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://git.ffmpeg.org/ffmpeg.git",
+                    "tag" : "n4.3.1"
+                }
+            ]
+        },
         {
             "name" : "libhandy",
             "buildsystem" : "meson",
@@ -72,8 +76,8 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/HelpSeeker/Gyre.git",
-                    "tag" : "v0.1.0",
-                    "commit" : "4dac6df158f2418671785895b7367f6cd1742c7f"
+                    "tag" : "v0.1.1",
+                    "commit" : "c8e9bb8a188a9eca760a088a45c204f35fca07ec"
                 }
             ]
         }
