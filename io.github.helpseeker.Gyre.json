@@ -1,7 +1,7 @@
 {
     "app-id" : "io.github.helpseeker.Gyre",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.38",
+    "runtime-version" : "40",
     "sdk" : "org.gnome.Sdk",
     "command" : "gyre",
     "finish-args" : [
@@ -44,7 +44,7 @@
                 {
                     "type" : "git",
                     "url" : "https://git.ffmpeg.org/ffmpeg.git",
-                    "tag" : "n4.3.1"
+                    "tag" : "n4.4"
                 }
             ]
         },
@@ -64,7 +64,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libhandy",
-                    "tag" : "1.0.2"
+                    "tag" : "1.0.3"
                 }
             ]
         },
@@ -76,8 +76,8 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/HelpSeeker/Gyre.git",
-                    "tag" : "v0.1.1",
-                    "commit" : "c8e9bb8a188a9eca760a088a45c204f35fca07ec"
+                    "tag" : "v0.1.2",
+                    "commit" : "c3aa9194967e7643b40198825a4a401d1fc2e089"
                 }
             ]
         }
