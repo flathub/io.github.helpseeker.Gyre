@@ -1,7 +1,7 @@
 {
     "app-id" : "io.github.helpseeker.Gyre",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "40",
+    "runtime-version" : "42",
     "sdk" : "org.gnome.Sdk",
     "command" : "gyre",
     "finish-args" : [
@@ -44,7 +44,7 @@
                 {
                     "type" : "git",
                     "url" : "https://git.ffmpeg.org/ffmpeg.git",
-                    "tag" : "n4.4"
+                    "tag" : "n5.0"
                 }
             ]
         },
@@ -76,8 +76,8 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/HelpSeeker/Gyre.git",
-                    "tag" : "v0.1.2",
-                    "commit" : "c3aa9194967e7643b40198825a4a401d1fc2e089"
+                    "tag" : "v0.1.3.1",
+                    "commit" : "e8a8221b2ff12eab36120228ea9e4e2683764179"
                 }
             ]
         }
