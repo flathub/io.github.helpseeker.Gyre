@@ -1,7 +1,7 @@
 {
     "app-id" : "io.github.helpseeker.Gyre",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "46",
+    "runtime-version" : "49",
     "sdk" : "org.gnome.Sdk",
     "command" : "gyre",
     "finish-args" : [
@@ -11,64 +11,8 @@
         "--socket=wayland",
         "--talk-name=org.freedesktop.Notifications"
     ],
-    "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
-    ],
     "modules" : [
         "python3-modules.json",
-        {
-            "name" : "ffmpeg",
-            "config-opts" : [
-                "--disable-all",
-                "--enable-avcodec",
-                "--enable-avformat",
-                "--enable-avfilter",
-                "--enable-swresample",
-                "--enable-ffmpeg",
-                "--enable-protocol=file",
-                "--enable-decoder=h264,mp3",
-                "--enable-encoder=wrapped_avframe,pcm_s16le",
-                "--enable-demuxer=concat,mov,mp3,asf",
-                "--enable-muxer=matroska,mp4,asf,avi,flv,f4v,mov,null",
-                "--enable-bsf=h264_mp4toannexb",
-                "--enable-filter=aresample"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://git.ffmpeg.org/ffmpeg.git",
-                    "tag" : "n5.1.4"
-                }
-            ]
-        },
-        {
-            "name" : "libhandy",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "-Dprofiling=false",
-                "-Dintrospection=enabled",
-                "-Dgtk_doc=false",
-                "-Dtests=false",
-                "-Dexamples=false",
-                "-Dvapi=false",
-                "-Dglade_catalog=disabled"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libhandy.git",
-                    "tag" : "1.8.3"
-                }
-            ]
-        },
         {
             "name" : "gyre",
             "builddir" : true,
